@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>fileTypes</key>
+	<array>
+		<string>fst</string>
+		<string>inp</string>
+		<string>ipt</string>
+		<string>dat</string>
+	</array>
+	<key>name</key>
+	<string>FAST</string>
+	<key>patterns</key>
+	<array>
+		<dict>
+			<key>comment</key>
+			<string>Comments</string>
+			<key>match</key>
+			<string>(\-{1}\s.*)|(\!{1}.*)</string>
+			<key>name</key>
+			<string>comment.line.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Find different sections</string>
+			<key>match</key>
+			<string>(\-{3,}.+\-{3,})</string>
+			<key>name</key>
+			<string>keyword.other.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All string</string>
+			<key>match</key>
+			<string>(\".*?\")</string>
+			<key>name</key>
+			<string>string.quoted.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in .inp file</string>
+			<key>match</key>
+			<string>\s{2,}(RandSeed1|RandSeed2|WrBHHTP|WrFHHTP|WrADHH|WrADFF|WrBLFF|WrADTWR|WrFMTFF |WrACT|Clockwise|ScaleIEC|NumGrid_Z|NumGrid_Y|TimeStep|AnalysisTime|UsableTime |HubHt|GridHeight|GridWidth|VFlowAng|HFlowAng|TurbModel|IECstandard|IECturbc |IEC_WindType|ETMc|WindProfileType|RefHt|URef|ZJetMax|PLExp|Z0|Latitude|RICH_NO |UStar|ZI|PC_UW|PC_UV|PC_VW|IncDec1|IncDec2|IncDec3|CohExp|CTEventPath |CTEventFile|Randomize|DistScl|CTLy|CTLz|CTStartTime)\s{1,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in .fst file</string>
+			<key>match</key>
+			<string>\s{2,}(Echo|AbortLevel|TMax|DT|InterpOrder|NumCrctn|DT_UJac|UJacSclFact|CompElast |CompAero|CompInflow|CompServo|CompHydro|CompSub|CompMooring|CompIce |CompUserPtfmLd|CompUserTwrLd|EDFile|BDBldFile\(1\)|BDBldFile\(2\)|BDBldFile\(3\) |InflowFile|AeroFile|ServoFile|HydroFile|SubFile|MooringFile|IceFile|SumPrint |SttsTime|ChkptTime|DT_Out|TStart|OutFileFmt|TabDelim|OutFmt|Linearize|NLinTimes |LinTimes|LinInputs|LinOutputs|LinOutJac|LinOutMod|WrVTK|VTK_type|VTK_fields |VTK_fps)\s{1,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in AeroDyn and AeroDyn_Tower</string>
+			<key>match</key>
+			<string>\s{2,}(SysUnits|StallMod|UseCm|InfModel|IndModel|AToler|TLModel|HLModel|WindFile |HH|TwrShad|TwrPotent|TwrShadow|TwrFile|CalcTwrAero|AirDens|KinVisc|DTAero |NumFoil|FoilNm|BldNodes|NTwrHt|NTwrRe|NTwrCD|Tower_Wake_Constant)\s{1,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available subparameters in AeroDyn and AeroDyn_Tower (horizontally)</string>
+			<key>match</key>
+			<string>\b(RNodes|AeroTwst|DRNodes|Chord|NFoil|PrnElm|TwrHtFr|TwrWid|NTwrCDCol|TwrRe| |TwrCD1|TwrCD2)\b</string>
+			<key>name</key>
+			<string>variable.parameter.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in ElastoDyn and ElastoDyn_Tower</string>
+			<key>match</key>
+			<string>\s{2,}(Method|Gravity|FlapDOF1|FlapDOF2|EdgeDOF|TeetDOF|DrTrDOF|GenDOF|YawDOF |TwFADOF1|TwFADOF2|TwSSDOF1|TwSSDOF2|PtfmSgDOF|PtfmSwDOF|PtfmHvDOF|PtfmRDOF |PtfmPDOF|PtfmYDOF|OoPDefl|IPDefl|BlPitch\(1\)|BlPitch\(2\)|BlPitch\(3\)|TeetDefl |Azimuth|RotSpeed|NacYaw|TTDspFA|TTDspSS|PtfmSurge|PtfmSway|PtfmHeave|PtfmRoll |PtfmPitch|PtfmYaw|NumBl|TipRad|HubRad|PreCone\(1\)|PreCone\(2\)|PreCone\(3\)| |HubCM|UndSling|Delta3|AzimB1Up|OverHang|ShftGagL|ShftTilt|NacCMxn|NacCMyn |NacCMzn|NcIMUxn|NcIMUyn|NcIMUzn|Twr2Shft|TowerHt|TowerBsHt|PtfmCMxt|PtfmCMyt |PtfmCMzt|PtfmRefzt|TipMass\(1\)|TipMass\(2\)|TipMass\(3\)|HubMass|HubIner |GenIner|NacMass|NacYIner|YawBrMass|PtfmMass|PtfmRIner|PtfmPIner|PtfmYIner |BldFile\(1\)|BldFile\(2\)|BldFile\(3\)|TeetMod|TeetDmpP|TeetDmp|TeetCDmp |TeetSStP|TeetHStP|TeetSSSp|TeetHSSp|GBoxEff|GBRatio|DTTorSpr|DTTorDmp |Furling|FurlFile|TwrNodes|OutFile|DecFact|NTwGages|TwrGagNd|NBlGages|BldGagNd |OutList|NTwInpSt|TwrFADmp\(1\)|TwrFADmp\(2\)|TwrSSDmp\(1\)|TwrSSDmp\(2\)| |FAStTunr\(1\)|FAStTunr\(2\)|SSStTunr\(1\)|SSStTunr\(2\)|AdjTwMa|AdjFASt|AdjSSSt |TwFAM1Sh\(2\)|TwFAM1Sh\(3\)|TwFAM1Sh\(4\)|TwFAM1Sh\(5\)|TwFAM1Sh\(6\)| |TwFAM2Sh\(2\)|TwFAM2Sh\(3\)|TwFAM2Sh\(4\)|TwFAM2Sh\(5\)|TwFAM2Sh\(6\)| |TwSSM1Sh\(2\)|TwSSM1Sh\(3\)|TwSSM1Sh\(4\)|TwSSM1Sh\(5\)|TwSSM1Sh\(6\)| |TwSSM2Sh\(2\)|TwSSM2Sh\(3\)|TwSSM2Sh\(4\)|TwSSM2Sh\(5\)|TwSSM2Sh\(6\))\s{1,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available subparameters in ElastoDyn and ElastoDyn_Tower (horizontally)</string>
+			<key>match</key>
+			<string>\b(HtFract|TMassDen|TwFAStif|TwSSStif)\b</string>
+			<key>name</key>
+			<string>variable.parameter.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in ServoDyn</string>
+			<key>match</key>
+			<string>(PCMode|TPCOn|TPitManS\(1\)|TPitManS\(2\)|TPitManS\(3\)|PitManRat\(1\) |PitManRat\(2\)|PitManRat\(3\)|BlPitchF\(1\)|BlPitchF\(2\)|BlPitchF\(3\) |VSContrl|GenModel|GenEff|GenTiStr|GenTiStp|SpdGenOn|TimGenOn|TimGenOf|VS_RtGnSp |VS_RtTq|VS_Rgn2K|VS_SlPc|SIG_SlPc|SIG_SySp|SIG_RtTq|SIG_PORt|TEC_Freq|TEC_NPol |TEC_SRes|TEC_RRes|TEC_VLL|TEC_SLR|TEC_RLR|TEC_MR|HSSBrMode|THSSBrDp|HSSBrDT |HSSBrTqF|YCMode|TYCOn|YawNeut|YawSpr|YawDamp|TYawManS|YawManRat|NacYawF|CompNTMD |NTMDfile|CompNTRD|NTMDfile|DLL_FileName|NacYaw_North|Ptch_Cntrl|Ptch_SetPnt |Ptch_Min|Ptch_Max|PtchRate_Min|PtchRate_Max|Gain_OM|GenSpd_MinOM|GenSpd_MaxOM |GenSpd_Dem|GenTrq_Dem|GenPwr_Dem|DLL_NumTrq|CompTTMD|TTMDfile|DLL_InFile |DLL_DT|DLL_ProcName|DLL_DT|DLL_Ramp|BPCutoff)</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available subparameters in ServoDyn (horizontally)</string>
+			<key>match</key>
+			<string>\b(GenSpd_TLU|GenTrq_TLU)\b</string>
+			<key>name</key>
+			<string>variable.parameter.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in Blade</string>
+			<key>match</key>
+			<string>\s{2,}(NBlInpSt|BldFlDmp\(1\)|BldFlDmp\(2\)|BldEdDmp\(1\)|FlStTunr\(1\)| |FlStTunr\(2\)|AdjBlMs|AdjFlSt|AdjEdSt |BldFl1Sh\(2\)|BldFl1Sh\(3\)|BldFl1Sh\(4\)|BldFl1Sh\(5\)|BldFl1Sh\(6\)| |BldFl2Sh\(2\)|BldFl2Sh\(3\)|BldFl2Sh\(4\)|BldFl2Sh\(5\)|BldFl2Sh\(6\)| |BldEdgSh\(2\)|BldEdgSh\(3\)|BldEdgSh\(4\)|BldEdgSh\(5\)|BldEdgSh\(6\)|)\s{1,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available subparameters in Blade (horizontally)</string>
+			<key>match</key>
+			<string>\b(BlFract|PitchAxis|StrcTwst|BMassDen|FlpStff|EdgStff)\b</string>
+			<key>name</key>
+			<string>variable.parameter.fst</string>
+		</dict>
+	</array>
+	<key>scopeName</key>
+	<string>text.fst</string>
+	<key>uuid</key>
+	<string>c382b39e-53a8-43dd-ad94-83a2f7e8e679</string>
+</dict>
+</plist>
