@@ -25,9 +25,17 @@
 			<key>comment</key>
 			<string>Find different sections</string>
 			<key>match</key>
-			<string>(\-{3,}.+\-{3,})</string>
+			<string>(\-{3,}.+\-{3,}|\={3,}.+\={3,})</string>
 			<key>name</key>
 			<string>keyword.other.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>Deleted parameters</string>
+			<key>match</key>
+			<string>\s{2,}(CompUserPtfmLd|CompUserTwrLd|SysUnits|WindFile|HH)\s{1,}</string>
+			<key>name</key>
+			<string>support.function.fst</string>
 		</dict>
 		<dict>
 			<key>comment</key>
@@ -49,7 +57,7 @@
 			<key>comment</key>
 			<string>All available parameters in .fst file</string>
 			<key>match</key>
-			<string>\s{2,}(Echo|AbortLevel|TMax|DT|InterpOrder|NumCrctn|DT_UJac|UJacSclFact|CompElast |CompAero|CompInflow|CompServo|CompHydro|CompSub|CompMooring|CompIce |CompUserPtfmLd|CompUserTwrLd|EDFile|BDBldFile\(1\)|BDBldFile\(2\)|BDBldFile\(3\) |InflowFile|AeroFile|ServoFile|HydroFile|SubFile|MooringFile|IceFile|SumPrint |SttsTime|ChkptTime|DT_Out|TStart|OutFileFmt|TabDelim|OutFmt|Linearize|NLinTimes |LinTimes|LinInputs|LinOutputs|LinOutJac|LinOutMod|WrVTK|VTK_type|VTK_fields |VTK_fps)\s{1,}</string>
+			<string>\s{2,}(Echo|AbortLevel|TMax|DT|InterpOrder|NumCrctn|DT_UJac|UJacSclFact|CompElast |CompAero|CompInflow|CompServo|CompHydro|CompSub|CompMooring|CompIce |EDFile|BDBldFile\(1\)|BDBldFile\(2\)|BDBldFile\(3\) |InflowFile|AeroFile|ServoFile|HydroFile|SubFile|MooringFile|IceFile|SumPrint |SttsTime|ChkptTime|DT_Out|TStart|OutFileFmt|TabDelim|OutFmt|Linearize|NLinTimes |LinTimes|LinInputs|LinOutputs|LinOutJac|LinOutMod|WrVTK|VTK_type|VTK_fields |VTK_fps)\s{1,}</string>
 			<key>name</key>
 			<string>entity.name.function.fst</string>
 		</dict>
@@ -57,7 +65,7 @@
 			<key>comment</key>
 			<string>All available parameters in AeroDyn and AeroDyn_Tower</string>
 			<key>match</key>
-			<string>\s{2,}(SysUnits|StallMod|UseCm|InfModel|IndModel|AToler|TLModel|HLModel|WindFile |HH|TwrShad|TwrPotent|TwrShadow|TwrFile|CalcTwrAero|AirDens|KinVisc|DTAero |NumFoil|FoilNm|BldNodes|NTwrHt|NTwrRe|NTwrCD|Tower_Wake_Constant)\s{1,}</string>
+			<string>\s{2,}(StallMod|UseCm|InfModel|IndModel|AToler|TLModel|HLModel|WindFile |HH|TwrShad|TwrPotent|TwrShadow|TwrFile|CalcTwrAero|AirDens|KinVisc|DTAero |NumFoil|FoilNm|BldNodes|NTwrHt|NTwrRe|NTwrCD|Tower_Wake_Constant)\s{1,}</string>
 			<key>name</key>
 			<string>entity.name.function.fst</string>
 		</dict>
@@ -68,6 +76,14 @@
 			<string>\b(RNodes|AeroTwst|DRNodes|Chord|NFoil|PrnElm|TwrHtFr|TwrWid|NTwrCDCol|TwrRe| |TwrCD1|TwrCD2)\b</string>
 			<key>name</key>
 			<string>variable.parameter.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in InflowWind</string>
+			<key>match</key>
+			<string>\s{2,}(WindType|PropagationDir|NWindVel|WindVxiList|WindVyiList|WindVziList |HWindSpeed|PLexp|Filename|RefLength|FilenameRoot|TowerFile|FileName_u|FileName_v |FileName_w|nx|ny|nz|dx|dy|dz|ScaleMethod|SFx|SFy|SFz|SigmaFx|SigmaFy|SigmaFz |WindProfile)\s{1,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
 		</dict>
 		<dict>
 			<key>comment</key>

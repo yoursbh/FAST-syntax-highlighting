@@ -1,4 +1,7 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
+# Author: Hao BAI (hao.bai@insa-rouen.fr)
+# Usable for FAST v8.16.*
+
 name: FAST
 scopeName: text.fst
 fileTypes: [fst, inp, ipt, dat]
@@ -12,11 +15,11 @@ patterns:
 
 - comment: Find different sections
   name: keyword.other.fst
-  match: (\-{3,}.+\-{3,})
+  match: (\-{3,}.+\-{3,}|\={3,}.+\={3,})
 
-# - comment: Funtion
-#   name: support.function.fst
-#   match: ([-+])(\[.*?\])
+- comment: Deleted parameters
+  name: support.function.fst
+  match: \s{2,}(CompUserPtfmLd|CompUserTwrLd|SysUnits|WindFile|HH)\s{1,}
 
 - comment: All string
   name: string.quoted.fst
@@ -35,7 +38,7 @@ patterns:
   name: entity.name.function.fst
   match: \s{2,}(Echo|AbortLevel|TMax|DT|InterpOrder|NumCrctn|DT_UJac|UJacSclFact|CompElast
          |CompAero|CompInflow|CompServo|CompHydro|CompSub|CompMooring|CompIce
-         |CompUserPtfmLd|CompUserTwrLd|EDFile|BDBldFile\(1\)|BDBldFile\(2\)|BDBldFile\(3\)
+         |EDFile|BDBldFile\(1\)|BDBldFile\(2\)|BDBldFile\(3\)
          |InflowFile|AeroFile|ServoFile|HydroFile|SubFile|MooringFile|IceFile|SumPrint
          |SttsTime|ChkptTime|DT_Out|TStart|OutFileFmt|TabDelim|OutFmt|Linearize|NLinTimes
          |LinTimes|LinInputs|LinOutputs|LinOutJac|LinOutMod|WrVTK|VTK_type|VTK_fields
@@ -43,13 +46,20 @@ patterns:
 
 - comment: All available parameters in AeroDyn and AeroDyn_Tower
   name: entity.name.function.fst
-  match: \s{2,}(SysUnits|StallMod|UseCm|InfModel|IndModel|AToler|TLModel|HLModel|WindFile
+  match: \s{2,}(StallMod|UseCm|InfModel|IndModel|AToler|TLModel|HLModel|WindFile
          |HH|TwrShad|TwrPotent|TwrShadow|TwrFile|CalcTwrAero|AirDens|KinVisc|DTAero
          |NumFoil|FoilNm|BldNodes|NTwrHt|NTwrRe|NTwrCD|Tower_Wake_Constant)\s{1,}
 - comment: All available subparameters in AeroDyn and AeroDyn_Tower (horizontally)
   name: variable.parameter.fst
   match: \b(RNodes|AeroTwst|DRNodes|Chord|NFoil|PrnElm|TwrHtFr|TwrWid|NTwrCDCol|TwrRe|
          |TwrCD1|TwrCD2)\b
+
+- comment: All available parameters in InflowWind
+  name: entity.name.function.fst
+  match: \s{2,}(WindType|PropagationDir|NWindVel|WindVxiList|WindVyiList|WindVziList
+         |HWindSpeed|PLexp|Filename|RefLength|FilenameRoot|TowerFile|FileName_u|FileName_v
+         |FileName_w|nx|ny|nz|dx|dy|dz|ScaleMethod|SFx|SFy|SFz|SigmaFx|SigmaFy|SigmaFz
+         |WindProfile)\s{1,}
 
 - comment: All available parameters in ElastoDyn and ElastoDyn_Tower
   name: entity.name.function.fst
