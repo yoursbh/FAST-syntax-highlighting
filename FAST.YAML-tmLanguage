@@ -4,7 +4,7 @@
 
 name: FAST
 scopeName: text.fst
-fileTypes: [fst, inp, ipt, dat]
+fileTypes: [fst, inp, ipt, dat, cru]
 uuid: c382b39e-53a8-43dd-ad94-83a2f7e8e679
 
 
@@ -19,20 +19,24 @@ patterns:
 
 - comment: Deleted parameters
   name: support.function.fst
-  match: \s{2,}(CompUserPtfmLd|CompUserTwrLd|SysUnits|WindFile|HH)\s{1,}
+  match: \s{2,}(CompUserPtfmLd|CompUserTwrLd|SysUnits|WindFile|HH|IncDec1|IncDec2|IncDec3
+               )\s{1,}
 
 - comment: All string
   name: string.quoted.fst
   match: (\".*?\")
 
-- comment: All available parameters in .inp file
+
+- comment: All available parameters in .inp file (TurbSim)
   name: entity.name.function.fst
   match: \s{2,}(RandSeed1|RandSeed2|WrBHHTP|WrFHHTP|WrADHH|WrADFF|WrBLFF|WrADTWR|WrFMTFF
          |WrACT|Clockwise|ScaleIEC|NumGrid_Z|NumGrid_Y|TimeStep|AnalysisTime|UsableTime
          |HubHt|GridHeight|GridWidth|VFlowAng|HFlowAng|TurbModel|IECstandard|IECturbc
          |IEC_WindType|ETMc|WindProfileType|RefHt|URef|ZJetMax|PLExp|Z0|Latitude|RICH_NO
-         |UStar|ZI|PC_UW|PC_UV|PC_VW|IncDec1|IncDec2|IncDec3|CohExp|CTEventPath
-         |CTEventFile|Randomize|DistScl|CTLy|CTLz|CTStartTime)\s{1,}
+         |UStar|ZI|PC_UW|PC_UV|PC_VW|InCDec1|InCDec2|InCDec3|CohExp|CTEventPath
+         |CTEventFile|Randomize|DistScl|CTLy|CTLz|CTStartTime|UserFile|ProfileFile|SCMod1
+         |SCMod2|SCMod3)\s{1,}
+
 
 - comment: All available parameters in .fst file
   name: entity.name.function.fst
@@ -44,6 +48,7 @@ patterns:
          |LinTimes|LinInputs|LinOutputs|LinOutJac|LinOutMod|WrVTK|VTK_type|VTK_fields
          |VTK_fps)\s{1,}
 
+
 - comment: All available parameters in AeroDyn and AeroDyn_Tower
   name: entity.name.function.fst
   match: \s{2,}(StallMod|UseCm|InfModel|IndModel|AToler|TLModel|HLModel|WindFile
@@ -54,12 +59,14 @@ patterns:
   match: \b(RNodes|AeroTwst|DRNodes|Chord|NFoil|PrnElm|TwrHtFr|TwrWid|NTwrCDCol|TwrRe|
          |TwrCD1|TwrCD2)\b
 
+
 - comment: All available parameters in InflowWind
   name: entity.name.function.fst
   match: \s{2,}(WindType|PropagationDir|NWindVel|WindVxiList|WindVyiList|WindVziList
          |HWindSpeed|PLexp|Filename|RefLength|FilenameRoot|TowerFile|FileName_u|FileName_v
          |FileName_w|nx|ny|nz|dx|dy|dz|ScaleMethod|SFx|SFy|SFz|SigmaFx|SigmaFy|SigmaFz
          |WindProfile)\s{1,}
+
 
 - comment: All available parameters in ElastoDyn and ElastoDyn_Tower
   name: entity.name.function.fst
@@ -85,6 +92,7 @@ patterns:
   name: variable.parameter.fst
   match: \b(HtFract|TMassDen|TwFAStif|TwSSStif)\b
 
+
 - comment: All available parameters in ServoDyn
   name: entity.name.function.fst
   match: (PCMode|TPCOn|TPitManS\(1\)|TPitManS\(2\)|TPitManS\(3\)|PitManRat\(1\)
@@ -101,6 +109,7 @@ patterns:
   name: variable.parameter.fst
   match: \b(GenSpd_TLU|GenTrq_TLU)\b
 
+
 - comment: All available parameters in Blade
   name: entity.name.function.fst
   match: \s{2,}(NBlInpSt|BldFlDmp\(1\)|BldFlDmp\(2\)|BldEdDmp\(1\)|FlStTunr\(1\)|
@@ -111,3 +120,12 @@ patterns:
 - comment: All available subparameters in Blade (horizontally)
   name: variable.parameter.fst
   match: \b(BlFract|PitchAxis|StrcTwst|BMassDen|FlpStff|EdgStff)\b
+
+
+- comment: All available parameters in Crunch
+  name: entity.name.function.fst
+  match: (FASTbin|CTRow|CURow|FDRow|NumRecs|TStart|TEnd)\s{2,}
+- comment: All available subparameters in Blade (horizontally)
+  name: variable.parameter.fst
+  match: (Col_Title|Units|Orig_Col_#|Scale|Offset|Group_Title|#ExtCols|ColList|#InfCols|
+         |Col_#|Hours_to_extrapolate_to|Quantile desired)

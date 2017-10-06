@@ -8,6 +8,7 @@
 		<string>inp</string>
 		<string>ipt</string>
 		<string>dat</string>
+		<string>cru</string>
 	</array>
 	<key>name</key>
 	<string>FAST</string>
@@ -33,7 +34,7 @@
 			<key>comment</key>
 			<string>Deleted parameters</string>
 			<key>match</key>
-			<string>\s{2,}(CompUserPtfmLd|CompUserTwrLd|SysUnits|WindFile|HH)\s{1,}</string>
+			<string>\s{2,}(CompUserPtfmLd|CompUserTwrLd|SysUnits|WindFile|HH|IncDec1|IncDec2|IncDec3 )\s{1,}</string>
 			<key>name</key>
 			<string>support.function.fst</string>
 		</dict>
@@ -47,9 +48,9 @@
 		</dict>
 		<dict>
 			<key>comment</key>
-			<string>All available parameters in .inp file</string>
+			<string>All available parameters in .inp file (TurbSim)</string>
 			<key>match</key>
-			<string>\s{2,}(RandSeed1|RandSeed2|WrBHHTP|WrFHHTP|WrADHH|WrADFF|WrBLFF|WrADTWR|WrFMTFF |WrACT|Clockwise|ScaleIEC|NumGrid_Z|NumGrid_Y|TimeStep|AnalysisTime|UsableTime |HubHt|GridHeight|GridWidth|VFlowAng|HFlowAng|TurbModel|IECstandard|IECturbc |IEC_WindType|ETMc|WindProfileType|RefHt|URef|ZJetMax|PLExp|Z0|Latitude|RICH_NO |UStar|ZI|PC_UW|PC_UV|PC_VW|IncDec1|IncDec2|IncDec3|CohExp|CTEventPath |CTEventFile|Randomize|DistScl|CTLy|CTLz|CTStartTime)\s{1,}</string>
+			<string>\s{2,}(RandSeed1|RandSeed2|WrBHHTP|WrFHHTP|WrADHH|WrADFF|WrBLFF|WrADTWR|WrFMTFF |WrACT|Clockwise|ScaleIEC|NumGrid_Z|NumGrid_Y|TimeStep|AnalysisTime|UsableTime |HubHt|GridHeight|GridWidth|VFlowAng|HFlowAng|TurbModel|IECstandard|IECturbc |IEC_WindType|ETMc|WindProfileType|RefHt|URef|ZJetMax|PLExp|Z0|Latitude|RICH_NO |UStar|ZI|PC_UW|PC_UV|PC_VW|InCDec1|InCDec2|InCDec3|CohExp|CTEventPath |CTEventFile|Randomize|DistScl|CTLy|CTLz|CTStartTime|UserFile|ProfileFile|SCMod1 |SCMod2|SCMod3)\s{1,}</string>
 			<key>name</key>
 			<string>entity.name.function.fst</string>
 		</dict>
@@ -130,6 +131,22 @@
 			<string>All available subparameters in Blade (horizontally)</string>
 			<key>match</key>
 			<string>\b(BlFract|PitchAxis|StrcTwst|BMassDen|FlpStff|EdgStff)\b</string>
+			<key>name</key>
+			<string>variable.parameter.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available parameters in Crunch</string>
+			<key>match</key>
+			<string>(FASTbin|CTRow|CURow|FDRow|NumRecs|TStart|TEnd)\s{2,}</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+		<dict>
+			<key>comment</key>
+			<string>All available subparameters in Blade (horizontally)</string>
+			<key>match</key>
+			<string>(Col_Title|Units|Orig_Col_#|Scale|Offset|Group_Title|#ExtCols|ColList|#InfCols| |Col_#|Hours_to_extrapolate_to|Quantile desired)</string>
 			<key>name</key>
 			<string>variable.parameter.fst</string>
 		</dict>
