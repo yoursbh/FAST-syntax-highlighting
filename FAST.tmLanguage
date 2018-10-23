@@ -120,6 +120,15 @@
 		</dict>
 		<dict>
 			<key>comment</key>
+			<string>All available parameters in ServoDyn_TRD</string>
+			<key>match</key>
+			<string>(TRD_MC|TRD_RC|TRD_P\(1\)|TRD_P\(2\)|TRD_P\(3\)|TRD_PHI_DSP|TRD_CMODE|TRD_TIMEON|TRD_AON|TRD_AOFF|TRD_F0|TRD_K\(1\)|TRD_K\(2\)|TRD_L\(1\)|TRD_L\(2\)|TRD_M)</string>
+			<key>name</key>
+			<string>entity.name.function.fst</string>
+		</dict>
+
+		<dict>
+			<key>comment</key>
 			<string>All available parameters in Blade</string>
 			<key>match</key>
 			<string>\s{2,}(NBlInpSt|BldFlDmp\(1\)|BldFlDmp\(2\)|BldEdDmp\(1\)|FlStTunr\(1\)| |FlStTunr\(2\)|AdjBlMs|AdjFlSt|AdjEdSt |BldFl1Sh\(2\)|BldFl1Sh\(3\)|BldFl1Sh\(4\)|BldFl1Sh\(5\)|BldFl1Sh\(6\)| |BldFl2Sh\(2\)|BldFl2Sh\(3\)|BldFl2Sh\(4\)|BldFl2Sh\(5\)|BldFl2Sh\(6\)| |BldEdgSh\(2\)|BldEdgSh\(3\)|BldEdgSh\(4\)|BldEdgSh\(5\)|BldEdgSh\(6\)|)\s{1,}</string>
