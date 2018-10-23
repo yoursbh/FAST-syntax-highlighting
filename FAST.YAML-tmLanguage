@@ -1,6 +1,8 @@
 # [PackageDev] target_format: plist, ext: tmLanguage
 # Author: Hao BAI (hao.bai@insa-rouen.fr)
 # Usable for FAST v8.16.*
+# Ref: http://docs.sublimetext.info/en/latest/extensibility/syntaxdefs.html
+
 
 name: FAST
 scopeName: text.fst
@@ -87,7 +89,8 @@ patterns:
          |TwFAM1Sh\(2\)|TwFAM1Sh\(3\)|TwFAM1Sh\(4\)|TwFAM1Sh\(5\)|TwFAM1Sh\(6\)|
          |TwFAM2Sh\(2\)|TwFAM2Sh\(3\)|TwFAM2Sh\(4\)|TwFAM2Sh\(5\)|TwFAM2Sh\(6\)|
          |TwSSM1Sh\(2\)|TwSSM1Sh\(3\)|TwSSM1Sh\(4\)|TwSSM1Sh\(5\)|TwSSM1Sh\(6\)|
-         |TwSSM2Sh\(2\)|TwSSM2Sh\(3\)|TwSSM2Sh\(4\)|TwSSM2Sh\(5\)|TwSSM2Sh\(6\))\s{1,}
+         |TwSSM2Sh\(2\)|TwSSM2Sh\(3\)|TwSSM2Sh\(4\)|TwSSM2Sh\(5\)|TwSSM2Sh\(6\)|TipDxc1
+         |TipDyc1|PtchPMzc1|PtchPMzc2|PtchPMzc3|YawBrTDxt|YawBrTDyt)\s{1,}
 - comment: All available subparameters in ElastoDyn and ElastoDyn_Tower (horizontally)
   name: variable.parameter.fst
   match: \b(HtFract|TMassDen|TwFAStif|TwSSStif)\b
@@ -104,10 +107,16 @@ patterns:
          |NTMDfile|CompNTRD|NTMDfile|DLL_FileName|NacYaw_North|Ptch_Cntrl|Ptch_SetPnt
          |Ptch_Min|Ptch_Max|PtchRate_Min|PtchRate_Max|Gain_OM|GenSpd_MinOM|GenSpd_MaxOM
          |GenSpd_Dem|GenTrq_Dem|GenPwr_Dem|DLL_NumTrq|CompTTMD|TTMDfile|DLL_InFile
-         |DLL_DT|DLL_ProcName|DLL_DT|DLL_Ramp|BPCutoff)
+         |DLL_DT|DLL_ProcName|DLL_DT|DLL_Ramp|BPCutoff|NTRDfile)
 - comment: All available subparameters in ServoDyn (horizontally)
   name: variable.parameter.fst
   match: \b(GenSpd_TLU|GenTrq_TLU)\b
+
+
+- comment: All available parameters in ServoDyn_TRD
+  name: entity.name.function.fst
+  match: (TRD_MC|TRD_RC|TRD_P\(1\)|TRD_P\(2\)|TRD_P\(3\)|TRD_PHI_DSP|TRD_CMODE|TRD_TIMEON
+         |TRD_AON|TRD_AOFF|TRD_F0|TRD_K\(1\)|TRD_K\(2\)|TRD_L\(1\)|TRD_L\(2\)|TRD_M)
 
 
 - comment: All available parameters in Blade
@@ -125,7 +134,9 @@ patterns:
 - comment: All available parameters in Crunch
   name: entity.name.function.fst
   match: (FASTbin|CTRow|CURow|FDRow|NumRecs|TStart|TEnd)\s{2,}
-- comment: All available subparameters in Blade (horizontally)
+- comment: All available subparameters in Crunch (horizontally)
   name: variable.parameter.fst
   match: (Col_Title|Units|Orig_Col_#|Scale|Offset|Group_Title|#ExtCols|ColList|#InfCols|
-         |Col_#|Hours_to_extrapolate_to|Quantile desired)
+         |Col_#|Hours_to_extrapolate_to|Quantile desired|Column #|Half-Cycle Multiplier|
+         |Max Range|Min Mean|Max Mean|Channel|WriteTroughs?|Trough Thresh\.|WritePeaks?|
+         |Peak Thresh\.)
